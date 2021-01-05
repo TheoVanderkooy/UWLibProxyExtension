@@ -5,7 +5,7 @@ Open the current page in a new tab through the UWaterloo library proxy by clicki
 
 ## Installation
 Not currently available through the Chrome store. You can install it manually in google chrome:
-1. Go the the chrome [chrome://extensions](extension page).
+1. Go the the chrome [extension page](chrome://extensions).
 2. Enable developer mode (top right corner).
 3. Click the "Load unpacked" button and select the folder of the repository containing the extension source files.
 

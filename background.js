@@ -1,4 +1,5 @@
 
+// configuration
 const proxy_host = ".proxy.lib.uwaterloo.ca";
 
 
