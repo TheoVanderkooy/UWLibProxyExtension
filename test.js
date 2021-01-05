@@ -1,6 +1,18 @@
-function setTestText(text) {
-    document.getElementById("testoutput").textContent = text;
+function setTabURL() {
+
+    chrome.tabs.query( {
+            active: true,
+            currentWindow: true,
+            // lastFocusedWindow: true,
+        },
+        tabs => {
+            document.getElementById("testoutput").textContent = tabs[0].url;
+            // alert(tabs[0]?.url);
+            // TODO -> parse out the URL and replace as appropriate
+            // TODO on icon click event...
+        });
+
 }
 
-var x = Math.floor(Math.random() * 1000);
-document.addEventListener("DOMContentLoaded", () => setTestText("testing " + x));
+
+document.addEventListener("DOMContentLoaded", setTabURL);
