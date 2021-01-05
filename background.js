@@ -1,14 +1,3 @@
-// function setTabURL() {
-//     chrome.tabs.query( {
-//             active: true,
-//             currentWindow: true,
-//             // lastFocusedWindow: true,
-//         },
-//         tabs => {
-//             document.getElementById("testoutput").textContent = tabs[0].url;
-//         });
-// }
-// document.addEventListener("DOMContentLoaded", setTabURL);
 
 const proxy_host = ".proxy.lib.uwaterloo.ca";
 
@@ -23,32 +12,23 @@ function translateURL(url) {
         return null;
     }
 
-    // construct and return new URL
+    // construct new URL
     let res = "https://" + hostname.replaceAll(".","-") + proxy_host + "/" + url_parts.join("/");
-
     return res;
 }
 
 
 chrome.browserAction.onClicked.addListener(tab => {
-    // chrome.tabs.query( {
-    //         active: true,
-    //         currentWindow: true,
-    //     },
-    //     tabs => {
-    //         var url = tabs[0].url;
-    //         // alert(translateURL(url));
-    //     });
-
     // new URL
     let proxyURL = translateURL(tab.url);
 
-    // alert(proxyURL);
-
     // early return if we're already in the proxy
-    if (!proxyURL) return;
-    // TODO!!! maybe show an error message?
+    if (!proxyURL) {
+        alert("Already using the UWaterloo proxy.");
+        return;
+    }
 
+    // open proxy in a new tab
     chrome.tabs.create({
         active: true,
         selected: true,
@@ -57,6 +37,3 @@ chrome.browserAction.onClicked.addListener(tab => {
         url: proxyURL,
     })
 });
-
-
-// .proxy.lib.uwaterloo.ca

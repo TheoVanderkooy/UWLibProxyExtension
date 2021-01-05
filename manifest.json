@@ -10,11 +10,10 @@
         "tabs"
     ],
     "browser_action": {
-        // "default_popup": "test.html",
         "default_icon": "icon.png"
     },
     "background": {
-        "scripts": ["test.js"],
+        "scripts": ["background.js"],
         "persistent": false
     }
 }
