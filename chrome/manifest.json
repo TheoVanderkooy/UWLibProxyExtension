@@ -1,0 +1,24 @@
+{
+    "manifest_version":3,
+    "name": "UWLibProxy",
+    "version": "1.0",
+
+    "description": "Opens the current page through the UWaterloo library proxy when the extension icon is clicked",
+    "author": "Theo Vanderkooy",
+
+    "permissions": [
+        "tabs"
+    ],
+    "icons": {
+        "256": "icon.png"
+    },
+    "action": {
+        "icons": {
+            "256": "icon.png"
+        }
+    },
+    "background": {
+        "service_worker": "background-chrome.js", "type": "module"
+    },
+    "minimum_chrome_version": "92"
+}

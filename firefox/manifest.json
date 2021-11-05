@@ -3,7 +3,7 @@
     "name": "UWLibProxy",
     "version": "1.0",
 
-    "description": "Opens the current page through tue UWaterloo library proxy",
+    "description": "Opens the current page through the UWaterloo library proxy when the extension icon is clicked",
     "author": "Theo Vanderkooy",
 
     "permissions": [
@@ -13,7 +13,6 @@
         "default_icon": "icon.png"
     },
     "background": {
-        "scripts": ["background.js"],
-        "persistent": false
+        "page": "background-firefox.html"
     }
 }
